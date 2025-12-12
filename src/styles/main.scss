@@ -1,0 +1,17 @@
+//base styles
+@use './base/typography';
+@use './base/reset';
+@use './base/base';
+
+//components styles
+@use './components/header';
+@use './components/footer';
+@use './components/button';
+@use './components/card';
+@use './components/modal';
+@use './components/loading';
+
+// utilities styles
+@use './utils/mixins';
+@use './utils/functions';
+@use './utils/variables';

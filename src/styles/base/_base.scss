@@ -1,0 +1,130 @@
+html,body{
+  font-family:  "Stick", "UoqMunThenKhung", "Kaisei Opti", "RocknRoll One", "Hachi Maru Pop","Kaisei Decol", ui-sans-serif, sans-serif !important; 
+  min-height: 100vh;
+  height: auto;
+  background: #b8ae9e;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(190, 189, 188, 0.45);
+  border-radius: 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(129, 129, 128, 0.45);
+}
+
+
+.message{
+  border: 2px solid #857d71;
+  box-shadow: 3px 3px 3px 0px rgba(133, 125, 113, 0.6);
+}
+.message-frame{
+  // border: 1px solid #857d71;
+  border-radius: 14px;
+  // box-shadow: -2px 0px 4px 1px rgb(181 181 181);
+}
+.message-sent-frame{
+  border: 1px solid #DECFC6;
+  box-shadow: 3px 4px 2px 2px #DECFC6;
+}
+
+/* 選擇滾動區塊 */
+.scroll-area {
+  overflow-y: auto;
+  scrollbar-width: thin; /* Firefox 用 */
+  scrollbar-color: #d1b6a3 #f3e8e2; /* Firefox 用 */
+}
+
+/* Chrome、Safari、Edge（WebKit） */
+.scroll-area::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scroll-area::-webkit-scrollbar-track {
+  background: #f3e8e2;   /* 滾動軌道顏色 */
+  border-radius: 10px;
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d1b6a3, #a77b67);  /* 滾動條顏色（漸層） */
+  border-radius: 10px;
+  border: 2px solid #f3e8e2;
+}
+
+.scroll-area::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #b78f79, #8f6550);
+}
+/* 🌙 全畫面淡暗 */
+.screen-dimmed {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔥 Spotlight（紅金版） */
+.spotlight {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 220, 150, 0.95) 0%,
+    rgba(255, 180, 80, 0.4) 40%,
+    rgba(200, 0, 0, 0.1) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.start-btn{
+  // animation: zoom 1s infinite linear;
+    background: #fbe77b;
+    // font-weight: bolder;
+    color: #000000;
+    box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    border: 3px solid #272726;
+}
+.start-btn:active{
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
+}
+/* ✨ 金色閃爍字體（更亮更明顯） */
+.golden-flash {
+  background: linear-gradient(90deg, #f9e7b2, #ffe9a0, #f5d57d, #f9e7b2);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 300%;
+  animation: goldenFlash 2s infinite linear;
+}
+
+@keyframes goldenFlash {
+  0% { background-position: 0%; }
+  50% { background-position: 150%; }
+  100% { background-position: 300%; }
+}
+
+/* 🎉 中獎者卡片滑入效果 */
+.winner-card {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(25px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

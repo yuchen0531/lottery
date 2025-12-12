@@ -1,0 +1,49 @@
+/* ==== Circular dot spinner ==== */
+.dot-spinner {
+  --spinner-size: 64px;
+  --dot-size: 10px;
+  --radius: 26px;           /* 半徑 */
+  --color: #f8ede2;         /* 和你的配色一致 */
+
+  position: relative;
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  animation: spinner-rotate 1.1s linear infinite;
+}
+
+.dot-spinner__dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  margin-top: calc(var(--dot-size) / -2);
+  margin-left: calc(var(--dot-size) / -2);
+  border-radius: 50%;
+  background: var(--color);
+  opacity: 0.18;
+
+  /* 依序把 12 個點排在圓周上 */
+  transform: rotate(calc(var(--i) * 30deg)) translate(var(--radius));
+  /* 讓每個點做閃爍，形成流動感 */
+  animation: spinner-fade 1.1s linear infinite;
+  animation-delay: calc(var(--i) * 0.09s);
+}
+
+@keyframes spinner-rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinner-fade {
+  0%   { opacity: 1;   }
+  60%  { opacity: 0.18;}
+  100% { opacity: 0.18;}
+}
+
+/* 螢幕閱讀器用（Tailwind 也有 .sr-only，若已裝可省略） */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
