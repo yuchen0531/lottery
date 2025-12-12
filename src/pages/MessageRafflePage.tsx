@@ -124,7 +124,7 @@ export default function MessageRafflePage() {
         transition={{ duration: 0.2 }}
         className="text-center mb-6"
       >
-        <div className="text-3xl font-bold text-white drop-shadow">
+        <div className="text-3xl font-bold text-white drop-shadow mb-2">
           {fakeDisplay.name || fakeDisplay.lineDisplayname}
         </div>
 
@@ -138,7 +138,7 @@ export default function MessageRafflePage() {
 
       {!isShuffling && revealedWinner && (
         <div className="text-center mb-6 winner-card">
-          <div className="text-5xl font-extrabold golden-flash mb-4 tracking-wide">
+          <div className="text-5xl font-extrabold golden-flash mb-4 tracking-wide leading-relaxed">
             {revealedWinner.name || revealedWinner.lineDisplayname}
           </div>
 
