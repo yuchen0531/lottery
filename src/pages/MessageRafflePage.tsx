@@ -129,7 +129,7 @@ export default function MessageRafflePage() {
                 transition={{ duration: 0.2 }}
                 className="text-center mb-6"
               >
-                <div className="text-3xl font-bold text-white drop-shadow mb-2">
+                <div className="text-4xl font-bold text-white drop-shadow mb-2">
                   {fakeDisplay.name || fakeDisplay.lineDisplayname}
                 </div>
 
@@ -143,13 +143,13 @@ export default function MessageRafflePage() {
             {!isShuffling && revealedWinner && (
               <>
               <div className="text-center mb-6 winner-card">
-                <div className="text-5xl font-extrabold golden-flash mb-4 tracking-wide leading-relaxed">
+                <div className="text-6xl font-extrabold golden-flash mb-4 tracking-wide leading-relaxed">
                   {revealedWinner.name || revealedWinner.lineDisplayname}
                 </div>
 
                 {/* 留言內容卡片 */}
                 <div className="mx-auto max-w-md bg-white border-4 border-[#e6d4b0] rounded-2xl p-5 shadow-lg">
-                  <div className="text-[#6b5f52] text-lg leading-relaxed">
+                  <div className="text-[#6b5f52] text-2xl leading-relaxed">
                     {revealedWinner.text}
                   </div>
                 </div>
@@ -162,7 +162,7 @@ export default function MessageRafflePage() {
           </div>
         )}
       <div className="px-4 pt-6 pb-12">
-        <h2 className="text-[#0e0905] font-bold text-2xl mb-2 text-center">中獎名單</h2>
+        <h2 className="text-[#0e0905] font-bold text-3xl mb-2 text-center">中獎名單</h2>
         <div className="bg-[#d3cdc4] p-4 rounded-2xl shadow-md mb-6 max-w-[900px] mx-auto">
           {winnerList.length === 0 ? (
             <div className="text-[#857d71]">目前尚無中獎者</div>
@@ -175,10 +175,10 @@ export default function MessageRafflePage() {
                   animate={{ opacity: 1, y: 0 }}
                   className="mb-2"
                 >
-                  <div className="text-[#534d46] font-bold text-lg">
+                  <div className="text-[#534d46] font-bold text-2xl">
                     {w.name || w.lineDisplayname}
                   </div>
-                  <div className="message bg-white rounded-lg px-2 py-1 text-sm text-[#534d46] text-left leading-relaxed">
+                  <div className="message bg-white rounded-lg px-2 py-1 text-xl text-[#534d46] text-left leading-relaxed">
                     {w.text}
                   </div>
                 </motion.li>
@@ -187,15 +187,15 @@ export default function MessageRafflePage() {
           )}
         </div>
 
-        <h2 className="text-[#0e0905] font-bold text-2xl mb-2 text-center">留言列表</h2>
+        <h2 className="text-[#0e0905] font-bold text-3xl mb-2 text-center">留言列表</h2>
         <div className="bg-[#d3cdc4] p-4 rounded-2xl shadow-md  max-w-[900px] mx-auto">
           <ul className="space-y-3">
             {messages.map(m => (
               <li key={m.id}>
-                <div className="text-[#857d71] font-semibold text-lg">
+                <div className="text-[#534d46] font-semibold text-2xl">
                   {m.name || m.lineDisplayname}
                 </div>
-                <div className="message bg-white rounded-lg px-2 py-1 text-sm text-[#534d46] text-left leading-relaxed">
+                <div className="message bg-white rounded-lg px-2 py-1 text-xl text-[#534d46] text-left leading-relaxed">
                   {m.text}
                 </div>
               </li>
