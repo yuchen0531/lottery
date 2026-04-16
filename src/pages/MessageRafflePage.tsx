@@ -108,7 +108,7 @@ export default function MessageRafflePage() {
 
 
   return (
-    <div className="bg-[#a19887] p-4 min-h-screen relative">
+    <div className="bg-[#ebe9e6] min-h-screen relative">
       <img src={banner} className="mb-6 w-full max-w-[900px] mx-auto" alt="" />
       <div className="text-center mb-4">
         <button
@@ -161,46 +161,49 @@ export default function MessageRafflePage() {
             )}
           </div>
         )}
-      <h2 className="text-white font-bold text-2xl mb-2 text-center">中獎名單</h2>
-      <div className="bg-[#fbf4eb] p-4 rounded-2xl shadow-md mb-6 max-w-[900px] mx-auto">
-        {winnerList.length === 0 ? (
-          <div className="text-[#857d71]">目前尚無中獎者</div>
-        ) : (
-          <ul className="space-y-3 ">
-            {winnerList.map(w => (
-              <motion.li
-                key={w.id}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mb-2"
-              >
-                <div className="text-[#534d46] font-bold text-lg">
-                  {w.name || w.lineDisplayname}
+      <div className="px-4 pt-6 pb-12">
+        <h2 className="text-[#0e0905] font-bold text-2xl mb-2 text-center">中獎名單</h2>
+        <div className="bg-[#d3cdc4] p-4 rounded-2xl shadow-md mb-6 max-w-[900px]">
+          {winnerList.length === 0 ? (
+            <div className="text-[#857d71]">目前尚無中獎者</div>
+          ) : (
+            <ul className="space-y-3 ">
+              {winnerList.map(w => (
+                <motion.li
+                  key={w.id}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-2"
+                >
+                  <div className="text-[#534d46] font-bold text-lg">
+                    {w.name || w.lineDisplayname}
+                  </div>
+                  <div className="message bg-white rounded-lg px-2 py-1 text-sm text-[#534d46] text-left leading-relaxed">
+                    {w.text}
+                  </div>
+                </motion.li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <h2 className="text-[#0e0905] font-bold text-2xl mb-2 text-center">留言列表</h2>
+        <div className="bg-[#d3cdc4] p-4 rounded-2xl shadow-md  max-w-[900px] mx-auto">
+          <ul className="space-y-3">
+            {messages.map(m => (
+              <li key={m.id}>
+                <div className="text-[#857d71] font-semibold text-lg">
+                  {m.name || m.lineDisplayname}
                 </div>
                 <div className="message bg-white rounded-lg px-2 py-1 text-sm text-[#534d46] text-left leading-relaxed">
-                  {w.text}
+                  {m.text}
                 </div>
-              </motion.li>
+              </li>
             ))}
           </ul>
-        )}
+        </div>
       </div>
-
-      <h2 className="text-white font-bold text-2xl mb-2 text-center">留言列表</h2>
-      <div className="bg-[#fbf4eb] p-4 rounded-2xl shadow-md  max-w-[900px] mx-auto">
-        <ul className="space-y-3">
-          {messages.map(m => (
-            <li key={m.id}>
-              <div className="text-[#857d71] font-semibold text-lg">
-                {m.name || m.lineDisplayname}
-              </div>
-              <div className="message bg-white rounded-lg px-2 py-1 text-sm text-[#534d46] text-left leading-relaxed">
-                {m.text}
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+      
       <LoadingModal show={isLoading} />
     </div>
   )
