@@ -163,7 +163,7 @@ export default function MessageRafflePage() {
         )}
       <div className="px-4 pt-6 pb-12">
         <h2 className="text-[#0e0905] font-bold text-2xl mb-2 text-center">中獎名單</h2>
-        <div className="bg-[#d3cdc4] p-4 rounded-2xl shadow-md mb-6 max-w-[900px]">
+        <div className="bg-[#d3cdc4] p-4 rounded-2xl shadow-md mb-6 max-w-[900px] mx-auto">
           {winnerList.length === 0 ? (
             <div className="text-[#857d71]">目前尚無中獎者</div>
           ) : (
